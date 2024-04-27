@@ -1,9 +1,1 @@
-YouTube Clone-Static
-
-Key Takeaway:
-
-Firm understanding of layouts
-
-Fully Responsive
-
-FLEX & GRID layout work 
+Welcome to our YouTube static clone project! We've recreated the pixel-perfect YouTube homepage using HTML and CSS. Advanced CSS concepts like flexbox, grid, and media queries ensure responsiveness. Our focus is on precise alignment and design details for an authentic replication. Explore how we've brought the YouTube homepage to life with HTML and CSS!
