@@ -4,7 +4,7 @@
 
 <div align="center">
   <br />
-    <a href="https://youtu.be/ZBCUegTZF7M?si=ubt0vk70lSjt6DCs" target="_blank">
+    <a href="" target="_blank">
       <img src="https://res.cloudinary.com/dslzeoxj7/image/upload/v1720807183/stopwatch_hcibbp.png" alt="Project Banner">
     </a>
   <br />
