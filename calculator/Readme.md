@@ -241,14 +241,91 @@ for (item of buttons) {
 </ul>
 
 **3. JavaScript Functionality**: 
+
+
+
+**1. Variable Initialization**
+
+```bash
+let screen = document.getElementById('screen');
+buttons = document.querySelectorAll('button');
+let screenValue = '';
+```
 <ul>
-  <li><code>Event Listener for Buttons</code>: Iterates over all buttons, adding a click event listener to handle user interactions.</li>
-  <li><code>Button Text Handling</code>: Captures the text displayed on the clicked button.</li>
-  <li><code>Multiplication ('X')</code>: Converts 'X' to '*' (multiplication operator) and appends it to the display.</li>
-  <li><code>Clear ('C')</code>: Resets the display and the current input to an empty string.</li>
-  <li><code>Equals ('=')</code>: Evaluates the mathematical expression in the display and shows the result.</li>
-  <li><code>Default Case</code>: Appends the clicked button's text (number or operator) to the display.</li>
+  <li><code>screen</code>: This variable references the HTML element with the ID screen, which represents the display area of the calculator.</li>
+  <li><code>buttons</code>: This selects all the button elements in the document, representing the calculator's buttons (digits, operators, etc.)</li>
+  <li><code>screenValue</code>: This string variable keeps track of the current input or expression displayed on the calculator screen.</li>
 </ul>
+
+**2. Event Listener for Buttons**
+
+```bash
+for (item of buttons) {
+    item.addEventListener('click', (e) => {
+        buttonText = e.target.innerText;
+        console.log('Button text is ', buttonText);
+
+```
+<ul>
+  <li><code>Event Listener</code>: Iterates over each button (<code>item</code>) and adds a click event listener to handle user interactions.</li>
+  <li><code>buttonText</code>: Captures the text displayed on the clicked button using <code>e.target.innerText</code>.</li>
+</ul>
+
+**3. Button Actions**
+<p>a. Multiplication ('X')</p>
+
+```bash
+if (buttonText == 'X') {
+    buttonText = '*';
+    screenValue += buttonText;
+    screen.value = screenValue;
+}
+```
+<ul>
+  <li><code>Multiplication Handling</code>: If the 'X' button is clicked, it is converted to <code>*</code> (the multiplication operator in JavaScript).</li>
+  <li>The <code>*</code> operator is appended to <code>screenValue</code>, and the display (<code>screen.value</code>) is updated accordingly.</li>
+</ul>
+<br>
+<p>b. Clear ('C')</p>
+
+```bash
+else if (buttonText == 'C') {
+    screenValue = "";
+    screen.value = screenValue;
+}
+
+```
+<ul>
+  <li><code>Clear Display</code>: If the 'C' button is clicked, <code>screenValue</code> is reset to an empty string, effectively clearing the screen.</li>
+</ul>
+<br>
+<p>c. Equals ('=')</p>
+
+```bash
+else if (buttonText == '=') {
+    screen.value = eval(screenValue);
+}
+
+
+```
+<ul>
+  <li><code>Evaluate Expression</code>: When the '=' button is clicked, the expression stored in <code>screenValue</code> is evaluated using the <code>eval()</code> function, and the result is displayed on the screen.</li>
+  <li><strong>Note</strong>: The use of <code>eval()</code> can pose security risks as it can execute any JavaScript code. It is advised to validate and sanitize inputs to avoid potential vulnerabilities.</li>
+</ul>
+<br>
+<p>d. Default Case</p>
+
+```bash
+else {
+    screenValue += buttonText;
+    screen.value = screenValue;
+}
+```
+<ul>
+  <li><code>Appending Values</code>: For any other button (digits, operators like <code>+</code>, <code>-</code>, <code>/</code>, etc.), the corresponding <code>buttonText</code> is appended to <code>screenValue</code>.</li>
+  <li>The screen (<code>screen.value</code>) is updated to reflect the new input or expression.</li>
+</ul>
+
 
 ## <a name="links">🔗 Links</a>
 Live Project can be found [here](https://calculator-byfrontendworld.netlify.app/)
