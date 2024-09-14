@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-const Api_key = "02c32c8908be937d1676db621964ab61";
+const Api_key = "Put your own api key"; //for api key -> https://home.openweathermap.org/ 
 
 const App = () => {
   const inputRef = useRef(null);
